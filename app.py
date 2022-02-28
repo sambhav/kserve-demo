@@ -7,7 +7,7 @@ class CustomModel(kserve.Model):
        self.name = name
 
     def predict(self, request: Dict) -> Dict:
-        return {"predictions": request.get("instances", [])}
+        return {"predictions": [request.get("instances", [])]}
 
 if __name__ == "__main__":
     model = CustomModel("custom-model")
