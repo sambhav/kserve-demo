@@ -4,6 +4,12 @@
 github:
   prebuilds:
     master: true
+    branches: true
+    pullRequests: true
+    pullRequestsFromForks: true
+    addCheck: false
+    addComment: false
+    addBadge: true
 tasks:
   - name: Setup paketo
     before: docker pull paketobuildpacks/builder:full && docker pull paketobuildpacks/run:full-cnb && chmod ugo+w /var/run/docker.sock && rm /home/gitpod/.rvm/gems/ruby-2.7.5/bin/tilt && (curl -sSL "https://github.com/buildpacks/pack/releases/download/v0.24.0/pack-v0.24.0-linux.tgz" | sudo tar -C /usr/local/bin/ --no-same-owner -xzv pack) && pack config default-builder paketobuildpacks/builder:full && pack config pull-policy if-not-present && (curl -fsSL https://raw.githubusercontent.com/tilt-dev/tilt/master/scripts/install.sh | bash)
