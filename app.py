@@ -1,6 +1,8 @@
 import kserve
 from typing import Dict
 
+#custom model
+
 class CustomModel(kserve.Model):
     def __init__(self, name: str):
        super().__init__(name)
